@@ -13,40 +13,40 @@
 
 // Prototypal pattern of object creation (Put methods inside an object and create object using Object.create).
 
-// function createQuestion(title, options, correctAnswerIndex) {
-//   let question = Object.create(getResult);
-//   question.title = title;
-//   question.options = options;
-//   question.correctAnswerIndex = correctAnswerIndex;
-//   return question;
-// }
+function createQuestion(title, options, correctAnswerIndex) {
+  let question = Object.create(questionMethods);
+  question.title = title;
+  question.options = options;
+  question.correctAnswerIndex = correctAnswerIndex;
+  return question;
+}
 
-// let getResult = {
-//   isAnswerCorrect: function (index) {
-//     return this.correctAnswerIndex === index;
-//   },
-//   getCorrectAnswer: function () {
-//     return this.options[this.correctAnswerIndex];
-//   },
-// };
+let questionMethods = {
+  isAnswerCorrect: function (index) {
+    return this.correctAnswerIndex === index;
+  },
+  getCorrectAnswer: function () {
+    return this.options[this.correctAnswerIndex];
+  },
+};
 
-// let firstQuestion = createQuestion(
-//   "Where is the capital of Jordan",
-//   ["Tashkent", "Amaan", "Kuwait City", "Nairobi"],
-//   1
-// );
-// let secondQuestion = createQuestion(
-//   "Where is the capital of Jamaica",
-//   ["Tashkent", "Amaan", "Kingston", "Nairobi"],
-//   2
-// );
+let firstQuestion = createQuestion(
+  "Where is the capital of Jordan",
+  ["Tashkent", "Amaan", "Kuwait City", "Nairobi"],
+  1
+);
+let secondQuestion = createQuestion(
+  "Where is the capital of Jamaica",
+  ["Tashkent", "Amaan", "Kingston", "Nairobi"],
+  2
+);
 
-// console.log(firstQuestion.isAnswerCorrect(1));
-// console.log(firstQuestion.isAnswerCorrect(2));
-// console.log(firstQuestion.getCorrectAnswer());
-// console.log(secondQuestion.isAnswerCorrect(2));
-// console.log(secondQuestion.isAnswerCorrect(3));
-// console.log(secondQuestion.getCorrectAnswer());
+console.log(firstQuestion.isAnswerCorrect(1));
+console.log(firstQuestion.isAnswerCorrect(2));
+console.log(firstQuestion.getCorrectAnswer());
+console.log(secondQuestion.isAnswerCorrect(2));
+console.log(secondQuestion.isAnswerCorrect(3));
+console.log(secondQuestion.getCorrectAnswer());
 
 // - Pseudoclassical Pattern (Put methods inside F.prototype and use `new` to call function)
 
