@@ -29,7 +29,7 @@ function createUser(name, age) {
 
 let personOne = createUser("ahir", 40);
 let personTwo = createUser("Tulsi", 24);
-personOne.sayHello();
+
 // 4. Change the code inside `createUser` in such a way that the methods `sayHello` doesn't have to be in all object. Use the prototypal nature. (Hint Object.create())
 function createUser(name, age) {
   let obj = Object.create(userMethods);
@@ -114,17 +114,6 @@ class User {
 let personOne = new CreateUser("Manash", 40);
 let personTwo = new CreateUser("Tulsi", 24);
 // 10. Try calling `personOne.sayHello()` and `personTwo.sayHello()`. Check if you get the required output.
-class User {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-  sayHello() {
-    alert(`Welcome ${this.name}`);
-  }
-}
 
-let personOne = new CreateUser("Manash", 40);
-let personTwo = new CreateUser("Tulsi", 24);
 personOne.sayHello();
 personTwo.sayHello();
