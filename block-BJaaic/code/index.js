@@ -7,7 +7,7 @@ let animalMethods = {
     return this.location;
   },
   summary: function () {
-    return `I live in ${this.location} and I have ${this.numberOfLegs}`;
+    return `I live in ${this.location} and I have ${this.numberOfLegs} legs`;
   },
 };
 
@@ -52,26 +52,27 @@ function createAnimal(location, numberOfLegs) {
   return animal;
 }
 
-function createDog(name, color) {
-  let animal = Object.create(dogMethods);
+function createDog(location, numberOfLegs, name, color) {
+  let animal = createAnimal(location, numberOfLegs);
+  Object.setPrototypeOf(animal, dogMethods);
   animal.name = name;
-  animal.location = location;
   animal.color = color;
-  animal.numberOfLegs = numberOfLegs;
   return animal;
 }
 
-function createCat(name, colorOfEyes) {
-  let animal = Object.create(catMethods);
+function createCat(location, numberOfLegs, name, colorOfEyes) {
+  let animal = createAnimal(location, numberOfLegs);
+  Object.setPrototypeOf(animal, catMethods);
   animal.name = name;
   animal.colorOfEyes = colorOfEyes;
-  animal.location = location;
-  animal.color = color;
-  animal.numberOfLegs = numberOfLegs;
   return animal;
 }
 
-Object.setPrototypeOf(
-  catMethods,
-  Object.setPrototypeOf(dogMethods, animalMethods)
-);
+// Object.setPrototypeOf(dogMethods, animalMethods);
+Object.setPrototypeOf(catMethods, animalMethods);
+
+///TEST///
+
+let tiger = createAnimal("Brazil", 4);
+let maggi = createDog("India", 4, "maggi", "black");
+let sushi = createCat("pakistan", 4, "sushi", "brown");
