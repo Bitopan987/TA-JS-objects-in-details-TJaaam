@@ -1,3 +1,5 @@
+//// - Pseudoclassical Pattern //////
+
 function CreateAnimal(location, numberOfLegs) {
   this.location = location;
   this.numberOfLegs = numberOfLegs;
@@ -63,13 +65,76 @@ CreateCat.prototype = {
 };
 
 Object.setPrototypeOf(CreateDog.prototype, CreateAnimal.prototype);
-// Object.setPrototypeOf(CreateCat.prototype,CreateAnimal.prototype );
+Object.setPrototypeOf(CreateCat.prototype, CreateAnimal.prototype);
+
+////  - Class Pattern  ////
+
+class Animal {
+  constructor(location, numberOfLegs) {
+    this.location = location;
+    this.numberOfLegs = numberOfLegs;
+  }
+  eat() {
+    console.log(`I live in ${this.location} and I can eat`);
+  }
+  changeLocation(newLocation) {
+    this.location = newLocation;
+    return this.location;
+  }
+  summary() {
+    return `I live in ${this.location} and I have ${this.numberOfLegs} legs`;
+  }
+}
+
+class Dog extends Animal {
+  constructor(location, numberOfLegs, name, color) {
+    super(location, numberOfLegs);
+    this.name = name;
+    this.color = color;
+  }
+  bark() {
+    alert(`I am ${this.name} and I can bark 🐶`);
+  }
+  changeName(newName) {
+    this.name = newName;
+    return this.name;
+  }
+  changeColor(newColor) {
+    this.color = newColor;
+    return this.color;
+  }
+  summary() {
+    return `I am ${this.name} and I am of ${this.color} color. I can also bark`;
+  }
+}
+
+class Cat extends Animal {
+  constructor(location, numberOfLegs, name, colorOfEyes) {
+    super(location, numberOfLegs);
+    this.name = name;
+    this.colorOfEyes = colorOfEyes;
+  }
+  meow() {
+    alert(`I am ${this.name} and I can do mewo meow 😹`);
+  }
+  changeName(newName) {
+    this.name = newName;
+    return this.name;
+  }
+  changeColorOfEyes(newColor) {
+    this.colorOfEyes = newColor;
+    return this.colorOfEyes;
+  }
+  summary() {
+    return `I am ${this.name} and the color of my eyes are ${this.colorOfEyes}. I can also do meow meow`;
+  }
+}
 
 ///TEST///
 
-let tiger = new CreateAnimal("Brazil", 4);
-let maggi = new CreateDog("India", 4, "maggi", "black");
-let sushi = new CreateCat("pakistan", 4, "sushi", "brown");
+let tiger = new Animal("Brazil", 4);
+let maggi = new Dog("India", 4, "maggi", "black");
+let sushi = new Cat("pakistan", 4, "sushi", "brown");
 
 console.log(tiger.changeLocation("Arunachal"));
 console.log(tiger.summary());
