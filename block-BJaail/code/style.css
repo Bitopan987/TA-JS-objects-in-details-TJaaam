@@ -130,21 +130,12 @@ table {
 }
 
 .container {
-  max-width: 60rem;
+  max-width: 70rem;
   margin: 0 auto;
-  background-color: aqua;
   padding: 2rem;
-  margin-top: 5rem;
-  border-radius: 5px;
 }
 
-label {
-  display: block;
-  padding: 1rem 0 0.5rem 0;
-  font-size: 2rem;
-}
-
-input {
+.form_input {
   width: 100%;
   padding: 1rem 0 1rem 0.5rem;
   display: block;
@@ -152,12 +143,70 @@ input {
   outline: none;
   border-radius: 7px;
   font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
   padding: 1rem 0;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
+  color: red;
+}
+
+h3 {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: 400rem;
+  color: #3e3eacc5;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700rem;
+  color: rgb(146, 240, 6);
+  padding: 1rem 0;
+}
+
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400rem;
+  color: blue;
+  padding-bottom: 1rem;
+}
+
+.form {
+  background-color: #80b94a;
+  padding: 4rem;
+  border-radius: 7px;
+}
+
+.form_button {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0 1rem 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  font-size: 1.5rem;
+  background-color: red;
+  color: antiquewhite;
+}
+
+.book_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+li {
+  flex: 0 1 48%;
+}
+
+img {
+  width: 100%;
 }
