@@ -197,6 +197,10 @@ p {
   color: antiquewhite;
 }
 
+.btn_read {
+  background-color: black;
+}
+
 .book_list {
   display: flex;
   flex-wrap: wrap;
