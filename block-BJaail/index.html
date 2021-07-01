@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookly App</title>
+    <link rel="stylesheet" href="./code/style.css" />
+  </head>
+  <body>
+    <div class="modal">
+      <div class="container">
+        <h1 class="form_title">My Book<strong>List</strong></h1>
+        <h3 class="form_subtitle">
+          You can add multiple boooks to your reading list.You can delete them
+          and mark as read.
+        </h3>
+        <form class="form">
+          <input
+            type="text"
+            class="form_input"
+            name="bookName"
+            placeholder="Name of the book!"
+          />
+          <input
+            type="text"
+            class="form_input"
+            name="bookAuthor"
+            placeholder="Author of the book!"
+          />
+          <input
+            type="text"
+            class="form_input"
+            name="bookImage"
+            placeholder="Book poster image URL"
+          />
+          <button type="submit" class="form_button">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="books">
+      <div class="container">
+        <ul class="book_list"></ul>
+      </div>
+    </div>
+    <script src="./code/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+/* Eric Mayers Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom  Styles */
+
+body {
+  background-color: #7fffd488;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Header */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #ff5e00;
+  color: aliceblue;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+fieldset {
+  border: 2px solid #ff5e00;
+  margin: 3rem 0;
+  padding: 2rem;
+}
+
+legend {
+  font-size: 2rem;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  color: aliceblue;
+  border-radius: 5px;
+}
+
+.btn-submit {
+  border: none;
+  outline: none;
+  padding: 0.7rem 1.4rem;
+  margin-top: 1.5rem;
+  display: inline-block;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 4px;
+  font-size: 1.3rem;
+}
+
+label {
+  font-size: 1.4rem;
+  margin-right: 1.3rem;
+  padding-left: 0.8rem;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prev,
+.next,
+.show_result {
+  border: none;
+  outline: none;
+  padding: 0.7rem 1.4rem;
+  display: inline-block;
+  background-color: #ff5e00;
+  color: aliceblue;
+  border-radius: 4px;
+  font-size: 1.3rem;
+}
+
+.show_result {
+  display: none;
+}
+
+button:hover {
+  background-color: #423f3f;
+  color: aliceblue;
+}
+
+/* .selected {
+  background: #f3f7f7 !important;
+  color: black !important;
+  border: 2px solid black !important;
+} */
