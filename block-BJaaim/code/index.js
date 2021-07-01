@@ -2,6 +2,8 @@ let form = document.querySelector("form");
 let prev = document.querySelector(".prev");
 let next = document.querySelector(".next");
 let quizElm = document.querySelector(".quiz");
+let totalQues = document.querySelector(".top p");
+let showResult = document.querySelector(".show_result");
 
 class Question {
   constructor(title, options, correctAnswerIndex) {
@@ -37,9 +39,12 @@ class Quiz {
   constructor(questions = [], score = 0) {
     this.questions = questions;
     this.score = score;
-    this.activeIndex = 3;
+    this.activeIndex = 2;
   }
 
+  incrementScore() {
+    this.score = this.score + 1;
+  }
   nextQuestion() {
     this.activeIndex = this.activeIndex + 1;
     this.createUI();
@@ -50,9 +55,22 @@ class Quiz {
     this.createUI();
   }
 
-  addQuestion(title, options, AnswerIndex) {
-    let question = new Question(title, options, AnswerIndex);
+  addQuestion(title, options, answerIndex) {
+    let question = new Question(title, options, answerIndex);
     this.questions.push(question);
+  }
+
+  handleButtons() {
+    if (this.activeIndex === 0) {
+      prev.style.visibility = "hidden";
+    } else if (this.activeIndex === this.questions.length - 1) {
+      next.style.visibility = "hidden";
+      showResult.style.display = "block";
+    } else {
+      prev.style.visibility = "visibile";
+      next.style.visibility = "visibile";
+      showResult.style.display = "none";
+    }
   }
 
   createUI() {
@@ -81,22 +99,38 @@ class Quiz {
       let label = document.createElement("label");
       label.for = `option-${index}`;
       label.innerText = option;
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (input.checked) {
+          if (activeQuestion.isCorrect(input.value)) {
+            this.incrementScore();
+          }
+        }
+      });
       div.append(input, label);
       optionElm.append(div);
     });
+    this.handleButtons();
+    totalQues.innerText = `Total Questions:${this.questions.length} `;
     fieldset.append(legend, optionElm, buttonWrapper);
     form.append(fieldset);
     quizElm.append(form);
   }
 }
 
-let quiz = new Quiz();
+function init() {
+  let quiz = new Quiz();
+  quizCollection.forEach((question) => {
+    quiz.addQuestion(question.title, question.options, question.answerIndex);
+  });
 
-quizCollection.forEach((question) => {
-  quiz.addQuestion(question.title, question.options, question.AnswerIndex);
-});
+  quiz.createUI();
 
-quiz.createUI();
+  next.addEventListener("click", quiz.nextQuestion.bind(quiz));
+  prev.addEventListener("click", quiz.prevQuestion.bind(quiz));
+  showResult.addEventListener("click", () => {
+    alert(`Your Score is ${quiz.score}`);
+  });
+}
 
-next.addEventListener("click", quiz.nextQuestion.bind(quiz));
-prev.addEventListener("click", quiz.prevQuestion.bind(quiz));
+init();
