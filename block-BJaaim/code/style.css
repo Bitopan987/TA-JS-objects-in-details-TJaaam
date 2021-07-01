@@ -139,6 +139,10 @@ table {
 
 /* Custom  Styles */
 
+body {
+  background-color: #7fffd488;
+}
+
 .container {
   max-width: 80rem;
   margin: 0 auto;
@@ -183,7 +187,7 @@ legend {
   border: none;
   outline: none;
   padding: 0.7rem 1.4rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: inline-block;
   background-color: black;
   color: aliceblue;
@@ -205,16 +209,20 @@ footer .container {
 }
 
 .prev,
-.next {
+.next,
+.show_result {
   border: none;
   outline: none;
   padding: 0.7rem 1.4rem;
-  margin-top: 2rem;
   display: inline-block;
   background-color: #ff5e00;
   color: aliceblue;
   border-radius: 4px;
   font-size: 1.3rem;
+}
+
+.show_result {
+  display: none;
 }
 
 button:hover {

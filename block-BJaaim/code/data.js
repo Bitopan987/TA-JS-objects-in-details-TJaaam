@@ -21,23 +21,53 @@ const quizCollection = [
     answerIndex: 1,
   },
   {
-    title: "Where is your home ?",
-    options: ["India", "Pakistan", "Myanmar", "Bhutan"],
+    title: "Gibon Wildlife Sanctury is located at?",
+    options: ["Chirang", "Dibrugarh", "Jorhat", "Darrang"],
     answerIndex: 0,
   },
   {
-    title: "What does Tulsi like most?",
-    options: ["chicken", "Banana", "Biscuit", "Potato"],
+    title: "What does Munna like most?",
+    options: ["chicken", "Banana", "Biscuit", "Chips"],
     answerIndex: 3,
   },
   {
-    title: "Which game Tulsi likes the most?",
-    options: ["Kabaddi", "Badminton", "Ludo", "Pub-G"],
+    title: "Which town is also known as the Manchester of Assam?",
+    options: ["Jorhat", "Diphu", "Sualkuchi", "Digboi"],
     answerIndex: 2,
   },
   {
-    title: "Which container does tulsi use to eat with?",
-    options: ["Bowl", "Plate", "big-container", "Soriya"],
-    answerIndex: 4,
+    title: "Total number of Parliamentary constituency in Assam?",
+    options: ["12", "11", "16", "14"],
+    answerIndex: 3,
+  },
+  {
+    title: "Namghosa was written by?",
+    options: ["Sankardev", "Madhabdev", "Madhava Kandali", "None of the above"],
+    answerIndex: 1,
+  },
+  {
+    title: "Who is also known as 'bihogi kobi'?",
+    options: [
+      "Dimbeswar Neog",
+      "Nalinidhar Bhattacharya",
+      "Raghunath Choudhary",
+      "Nilmoni Phukan",
+    ],
+    answerIndex: 2,
+  },
+  {
+    title: "Which Assamese writer is also known as 'Bakulbonor Kavi'?",
+    options: [
+      "Bishnuram Medhi",
+      "Binanda Chandra Barua",
+      "Anandaram Dhekial Phukan",
+      "Ananda Chandra Barua",
+    ],
+    answerIndex: 3,
+  },
+  {
+    title: "The Assam silk industry is mainly centered in",
+    options: ["Sualkuchi", "Hajo", "Rangia", "Nagaon"],
+    answerIndex: 0,
   },
 ];
